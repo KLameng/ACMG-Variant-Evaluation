@@ -1,0 +1,31 @@
+> **来源**：ClinGen SVI Criteria Specification Repository
+> 数据日期：2026-06-13
+> 原文提取方式：逐字保留
+
+    *   Cannonical splice site variants that flank exon 18 **(the final exon of NM\_001323289.2)**
+    *   Single to multi exon deletions that disrupt the reading frame such that exon 18 **(the final exon of NM\_001323289.2)** is truncated/altered
+    *   Duplications ≥1 exon in size (that are completely contained within the CDKL5 gene) where the reading frame is presumed to be disrupted and NMD is predicted to occur
+- **Moderate** ✅：Null variant in a gene where loss of function is a known mechanism of disease.
+
+*   PVS1\_Moderate is applicable for:
+    *   Any truncating variant distal of p.R948 (**when using the major brain isoform, NM\_001323289.2**)
+    *   Canonical splice site variants that flank exon 17 (in-frame exon) (**NM\_001323289.2**)
+- **Supporting** ✅：Null variant in a gene where loss of function is a known mechanism of disease.
+
+*   PVS1\_Supporting is applicable for initiation codon variants in _CDKL5._
+
+
+#### PS1
+- 默认强度：Pathogenic Strong
+- ACMG原始定义：Same amino acid change as a previously established pathogenic variant regardless of nucleotide change.
+Example: Val->Leu caused by either G>C or G>T in the same codon.
+Caveat: Beware of changes that impact splicing rather than at the amino acid/protein level.
+- **Strong** ✅：Same amino acid change as a previously established pathogenic variant regardless of nucleotide change.
+
+
+#### PS2
+- 默认强度：Pathogenic Strong
+- ACMG原始定义：De novo (both maternity and paternity confirmed) in a patient with the disease and no family history.
+Note: Confirmation of paternity only is insufficient. Egg donation, surrogate motherhood, errors in embryo transfer, etc. can contribute to non-maternity.
+- **Very Strong** ✅：De novo (maternity and paternity confirmed) in a patient with the disease and no family history.
+* ≥2 independent occurrences of PS2.

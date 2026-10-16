@@ -1,0 +1,29 @@
+> **来源**：ClinGen SVI Criteria Specification Repository
+> 数据日期：2026-06-13
+> 原文提取方式：逐字保留
+
+- ACMG原始定义：Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes or Exome Aggregation Consortium.
+Caveat: Population data for indels may be poorly called by next generation sequencing.
+- **Supporting** 📋：Absent/Rare in population databases (absent or ≤0.00007 (0.007%) for autosomal recessive, ≤0.00002 (0.002%) for autosomal dominant).
+* Background: Rarity or absence in the general population is not robust evidence for pathogenicity, particularly for autosomal recessive disorders. However, the ACMG/AMP Guidelines were devised in such a way that absence or rarity were considered moderate evidence towards pathogenicity, and the framework requires multiple pieces of evidence to classify a variant as likely pathogenic or pathogenic.
+
+
+#### PM3
+- 默认强度：Pathogenic Moderate
+- ACMG原始定义：For recessive disorders, detected in trans with a pathogenic variant
+Note: This requires testing of parents (or offspring) to determine phase.
+- **Very Strong** 📋：4 points awarded from tables 7a and 7b
+Example: Detected in trans in ≥4 probands with a pathogenic variant (recessive).
+- **Strong** 📋：2 points awarded from tables 7a and 7b
+Example: Detected in trans in 2 probands with a pathogenic variant (recessive).
+- **Moderate** 📋：1 point awarded from tables 7a and 7b.
+Example: Detected in trans with a pathogenic variant (recessive).
+- **Supporting** 📋：0.5 points awarded from tables 7a and 7b
+Examples: Two variants that meet PM2_Supporting detected in trans; OR
+a homozygous variant meeting PM2_Supporting.
+
+
+#### PM4
+- 默认强度：Pathogenic Moderate
+- ACMG原始定义：Protein length changes due to in-frame deletions/insertions in a non-repeat region or stop-loss variants.
+- **Moderate** 📋：Protein length change due to an in-frame deletion or insertion that are not located in repetitive regions.

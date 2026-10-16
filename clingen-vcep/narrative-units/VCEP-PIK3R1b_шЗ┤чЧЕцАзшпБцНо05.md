@@ -1,0 +1,14 @@
+> **来源**：ClinGen SVI Criteria Specification Repository
+> 数据日期：2026-06-13
+> 原文提取方式：逐字保留
+
+*   Do not apply PVS1 at any strength for initiation codon variants. There are two known alternative start codons located after codon 306 of _PIK3R1_ in the MANE transcript encoding the p85α isoform (PMID: 28802037). Although there are known disease-causing variants upstream of these alternative start codons, indicating that disruption of the p85α isoform alone is sufficient to cause disease, these variants have so far been published only in association with agammaglobulinemia 7 with autosomal recessive inheritance, and are not considered applicable for the current specifications.
+*   If a canonical splicing variant is predicted to result in skipping of exon 1 (non-coding), exon 2 (which contains the start codon for the MANE transcript), exon 3 (in-frame), exon 4 (in-frame), exon 5 (in-frame), exon 6 (out-of-frame), or exon 7 (out-of-frame), do not apply PVS1 at any strength in the context of this gene-disease relationship (MONDO:1060136). These variants have been published so far only in association with autosomal recessive agammaglobulinemia 7, which is outside the scope of the current specifications.
+*   If a missense, synonymous, or intronic variant outside of the canonical splice sites has a SpliceAI score >0.2 and has been confirmed to cause complete or near-complete disruption of splicing within the mRNA in a study of patient RNA or minigene assay, avoid PP3 and PS3\_Supporting and evaluate PVS1(RNA) instead (PMID: 37352859).
+
+
+#### PS1
+- 默认强度：Pathogenic Strong
+- ACMG原始定义：Same amino acid change as a previously established pathogenic variant regardless of nucleotide change.
+Example: Val->Leu caused by either G>C or G>T in the same codon.
+Caveat: Beware of changes that impact splicing rather than at the amino acid/protein level.

@@ -1,0 +1,39 @@
+> **来源**：ClinGen SVI Criteria Specification Repository
+> 数据日期：2026-06-13
+> 原文提取方式：逐字保留
+
+- 默认强度：Pathogenic Moderate
+- ACMG原始定义：Assumed de novo, but without confirmation of paternity and maternity.
+- **Very Strong** ✅：Assumed de novo without confirmation of paternity and maternity.
+
+*   ≥4 independent occurrences of PM6. Evidence from literature must be fully evaluated to support independent events.
+- **Strong** ✅：Assumed de novo without confirmation of paternity and maternity.
+
+*   ≥2 independent occurrences of PM6. Evidence from literature must be fully evaluated to support independent events.
+- **Moderate** ✅：Assumed de novo without confirmation of paternity and maternity.
+
+*   1 occurrence of PM6.
+
+
+#### PP1
+- 默认强度：Pathogenic Supporting
+- ACMG原始定义：Co-segregation with disease in multiple affected family members in a gene definitively known to cause the disease.
+Note: May be used as stronger evidence with increasing segregation data.
+- **Strong** ✅：Co-segregation with disease in multiple affected family members.
+
+*   ≥5 informative meiosis.
+- **Moderate** ✅：Co-segregation with disease in multiple affected family members.
+
+*   3-4 informative meiosis.
+- **Supporting** ✅：Co-segregation with disease in multiple affected family members.
+
+*   2 informative meiosis.
+
+
+#### PP3
+- 默认强度：Pathogenic Supporting
+- ACMG原始定义：Multiple lines of computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.).
+Caveat: As many in silico algorithms use the same or very similar input for their predictions, each algorithm should not be counted as an independent criterion. PP3 can be used only once in any evaluation of a variant.
+- **Supporting** ✅：Multiple lines of computational evidence support a deleterious effect on the gene or gene product.
+
+*   For missense variants use REVEL with a score ≥ 0.644.

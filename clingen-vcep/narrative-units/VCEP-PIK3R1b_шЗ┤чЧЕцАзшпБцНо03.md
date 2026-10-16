@@ -1,0 +1,8 @@
+> **来源**：ClinGen SVI Criteria Specification Repository
+> 数据日期：2026-06-13
+> 原文提取方式：逐字保留
+
+*   If a nonsense or frameshift variant introduces a premature stop between codons 646 and 718 that is not predicted to trigger nonsense mediated decay but disrupts the cSH2 domain, apply PVS1\_Strong.
+*   If a canonical splicing variant is predicted to result in skipping of in-frame exon 9 or 11 (which encode the nSH2 domain), in-frame exon 13 or 14, (which encode the iSH2 domain), or either in-frame exon 15 or out-of-frame exon 16, (which encode the cSH2 domain, PMID: 38043374), apply PVS1\_Strong.
+*   If a nonsense or frameshift variant introduces a premature stop codon between c.4 and c.916, which is predicted to trigger nonsense-mediated decay but the exon is present only in the MANE transcript NM\_181523.3 but absent from NM\_181504.4 and NM\_181524.2, do not apply PVS1 at any strength in the context of this gene-disease relationship (MONDO:1060136). These variants have been published so far only in association with autosomal recessive agammaglobulinemia 7, which is outside the scope of the current specifications.
+*   Do not apply PVS1 at any strength for initiation codon variants. There are two known alternative start codons located after codon 306 of _PIK3R1_ in the MANE transcript encoding the p85α isoform (PMID: 28802037). Although there are known disease-causing variants upstream of these alternative start codons, indicating that disruption of the p85α isoform alone is sufficient to cause disease, these variants have so far been published only in association with agammaglobulinemia 7 with autosomal recessive inheritance, and are not considered applicable for the current specifications.
