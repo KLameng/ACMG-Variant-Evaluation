@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "name": "ACMG 评级技能群集中阈值配置表",
+    "purpose": "把散落各子 SKILL 的外部阈值集中为带版本号的单一配置，官方升版改此处即全局生效；D6⑩ 版本绑定据此核查",
+    "updated": "2026-10-15",
+    "usage": "组合引擎 acmg_combine.py 与各 ev-* 子 SKILL 统一引用；修改任何阈值必须同步更新 source+version，禁止硬编码漂移"
+  },
+  "score": {
+    "note": "证据码使用等级 → 分值（Tavtigian 2020 'Point system to the ACMG/AMP guidelines'；收尾 §0 证据等级↔分值对照表）",
+    "VS": 8, "ST": 4, "MO": 2, "SU": 1,
+    "benign_sign": "negative",
+    "source": "Tavtigian 2020 (PMID 32720330)",
+    "version": "2020"
+  },
+  "tavtigian_interval": {
+    "note": "Tavtigian 分值累加定级区间。默认 2020（已发表、可核验，PMID 32720330）；2023 为年会草案（良性分界收紧、无已发表来源），仅作可选并显式标注",
+    "default": "2020",
+    "2020": {
+      "note": "Tavtigian 2020 Table 3 原版",
+      "P_min": 10, "LP_min": 6, "VUS_min": 0, "LB_min": -1, "B_min": -7,
+      "LB_range": "-1 ~ -6", "B_range": "<= -7",
+      "source": "Tavtigian et al. 2020, Hum Mutat 41(10):1734-1737 (PMID 32720330)",
+      "version": "2020"
+    },
+    "2023": {
+      "note": "ACMG/AMP/CAP/ClinGen 联合工作组 2023 更新草案（良性分界收紧）",
+      "P_min": 10, "LP_min": 6, "VUS_min": 0, "LB_min": -3, "B_min": -4,
+      "LB_range": "-3 ~ -1", "B_range": "<= -4",
+      "VUS_low": 0, "VUS_mid": 2, "VUS_high": 4,
+      "source": "ACMG 年会序列变异致病性分级草案 2023",
+      "version": "2023-draft"
+    },
+    "bmpR2_gn125_v2": {
+      "note": "【特殊基因专用区间，默认不启用，禁止当通用】ClinGen Pulmonary Hypertension EP 对 BMPR2 的单基因 VCEP 分值规范（GN125 v2.0.0，2026-01-30）：VUS −1~5、LB −2~−6、B≤−7。**仅适用于 BMPR2 / 肺动脉高压(PAH) 单基因**（v7 定向检查 P1-A：数值抄录准确但性质判定错误——GN125 是 BMPR2 一个基因的规范，非『现行 VCEP 通用第三套』；2025 SVI 精炼后通用区间仍为 B≤−7 / LB −1~−6 / VUS 0~5 / LP 6~9 / P≥10，PMC13069149）。默认不启用，仅当所评基因为 BMPR2/PAH 且显式选用时才生效",
+      "scope": "仅 BMPR2 / 肺动脉高压(PAH) 单基因",
+      "enabled_by_default": false,
+      "P_min": 10, "LP_min": 6, "VUS_min": -1, "LB_min": -2, "B_min": -7,
+      "VUS_range": "-1 ~ 5", "LB_range": "-2 ~ -6", "B_range": "<= -7",
+      "source": "ClinGen CSpec GN125 v2.0.0（BMPR2 单基因规范，2026-01-30）；点值系统 Tavtigian 2020 (PMID 32720330)",
+      "version": "bmpR2-gn125-v2.0.0"
+    }
+  },
+  "pm2": {
+    "note": "PM2 人群频率阈值（正常对照数据库中未发现/极低频）。注意：ACMG 2015 与 ClinGen SVI 均未给定 PM2 通用数值，故通用阈值一律属『本实验室内部口径』，不得伪归因给权威来源",
+    "af_lab_generic": {
+      "note": "本实验室现行通用口径（ev-pm2 第3.5步：AD/XL <0.0005、AR <0.001），代码与子技能一致，以此为准；无权威出处",
+      "AD": 0.0005, "AR": 0.001,
+      "source": "本实验室现行口径（ACMG 2015/SVI 未给定通用数值）",
+      "version": "lab-v1"
+    },
+    "af_genetic": {
+      "note": "基因/疾病特异性阈值，以特异性阈值为准（单位：等位基因频率比例；AR-HL 0.007% = 0.00007，展开至常隐耳聋基因，供 pm2_by_gene 按基因名命中；PTEN 0.001% = 0.00001）",
+      "AR-HL": 0.00007, "PTEN": 0.00001,
+      "GJB2": 0.00007, "SLC26A4": 0.00007, "CDH23": 0.00007, "MYO15A": 0.00007,
+      "OTOF": 0.00007, "TMPRSS3": 0.00007, "STRC": 0.00007, "GJB6": 0.00007,
+      "source": "各 ClinGen VCEP / 疾病特异性指南；AR-HL 阈值 0.007% 应用于常隐遗传性听力损失基因类",
+      "version": "cspec 各版"
+    }
+  },
+  "revel": {
+    "note": "REVEL 错义预测强度切点（指南解读 Table 2）",
+    "pp3_supporting_min": 0.644, "pp3_moderate_min": 0.773, "pp3_strong_min": 0.932,
+    "bp4_very_strong_max": 0.003, "bp4_strong_max": 0.016, "bp4_moderate_max": 0.183, "bp4_supporting_max": 0.290,
+    "source": "指南解读 slide 53 / Table 2；REVEL PMID 36413997",
+    "version": "指南解读 v2"
+  },
+  "spliceai": {
+    "note": "SpliceAI 剪接预测阈值。⚠ 两套刻度分离、不混用不换算：①PP3/PVS1 剪接致病侧用 SpliceAI2（v2）三档切点（config v2_thresholds）；②BP4 良性侧排除切点按各基因 VCEP 原文执行（多数 VCEP 用初代 SpliceAI <0.1 判无剪接效应，官方出处：SpliceAI v1 官方 0≤x 低置信/可能良性），不得用 v2 分数套 v1 的 ≤0.1 BP4 阈值（v1/v2 刻度不同，官方未发布 v1↔v2 换算映射，禁止臆造换算）；判定时须标注所用刻度（v1 或 v2）。",
+    "v1_threshold": 0.2,
+    "v1_bp4_no_impact": 0.1,
+    "v1_bp4_note": "初代 SpliceAI BP4 排除（无剪接效应）切点 <0.1；官方区间：0≤x 低置信/可能良性、0.1≤x≤0.5 可能致病（illumina.github.io SpliceAI 文档）；多数 VCEP 原文 BP4 引用此值",
+    "v1_source": "Jaganathan et al. Cell 2019;176(3):535-548, PMID 30661751",
+    "v1_version": "SpliceAI v1 (2019)",
+    "v2_thresholds": {"supporting": 0.1, "moderate": 0.25, "strong": 0.5},
+    "v2_bp4_no_impact": null,
+    "v2_bp4_note": "SpliceAI2 官方未发布 BP4 排除切点，也未发布 v1↔v2 分数换算映射；故 BP4 良性侧不套 v2 刻度，按各基因 VCEP 原文（初代）执行，禁止臆造 v2 BP4 切点",
+    "v2_source": "本实验室内部口径：SpliceAI2 官方（Illumina, 2026-10-08）未发布分级切点，v2 三档 0.1/0.25/0.5 沿用初代 SpliceAI/VCEP 通用三档切点，未经官方确认，不得伪归因给 SpliceAI2 官方",
+    "v2_version": "lab-internal（SpliceAI2 2026-10-08；三档切点非官方、内部沿用）",
+    "note_pp3_pvs1": "剪接侧 PP3/PVS1 判定用 v2 三档切点；初代 0.2 作 v1 兼容"
+  },
+  "lof": {
+    "note": "LOF 等位基因频率阈值（PVS1 截短变异适用）。⚠ 修正：Abou Tayoun et al. 2018（SVI PVS1 建议）对 LoF 人群频率为『定性』表述（原文明确 'Each disease group should determine such cutoffs'，未给 0.001 数值），故本键为『本实验室内部口径』，不得伪归因给 Abou Tayoun 2018；该键当前无引擎消费者（空转），保留仅作内部参考。",
+    "af_threshold": 0.001,
+    "source": "本实验室内部口径（Abou Tayoun 2018 未给定 LoF 频率数值，原文定性）",
+    "version": "lab-internal"
+  },
+  "pp1_lod": {
+    "note": "PP1 共分离 LOD 强度切点。⚠ 出处修正（第三轮审计 4.1）：0.9/1.5/2.1 是 ClinGen Cardiomyopathy EP 疾病特异上调档（GN098-101：Supporting ≥3 减数分裂 LOD0.9 / Moderate ≥5 LOD1.5 / Strong ≥7 LOD2.1），非 J&B 2016 原值；Jarvik & Browning 2016 原值为 0.9/1.2/1.5（3/4/5 减数分裂）。本表按现行 CMP-EP 采用档。",
+    "supporting": 0.9, "moderate": 1.5, "strong": 2.1,
+    "source": "ClinGen Cardiomyopathy EP 疾病特异档（GN098-101）；J&B 2016 原值 0.9/1.2/1.5（PMID 27495972）",
+    "version": "CMP-EP (2026)",
+    "segregations_ref": "CMP-EP：3 减数分裂 Supporting / 5 Moderate / 7 Strong；J&B 2016：3/4/5"
+  },
+  "hl_vcep_pp1": {
+    "note": "HL VCEP（GN005）PP1 隐性(AR)分离专用口径，覆盖遗传性耳聋基因（USH2A 等）。⚠ 取代通用 pp1_lod 阈值：受累**个体数** affected **含先证者**，受累**分离数 = 个体数 − 1**（官网 v2 明文 do not count probands as a segregation；Affected segregations = # affected individuals − 1）；unaffected 只算有同等遗传风险、且对两变异均野生型或仅携带单个变异的成员，**携带者父母不计**。LOD = log10(1/(0.25^(affected−1) × 0.75^unaffected))（affected 为受累个体数含先证者，指数取个体数−1）。有 HL VCEP 基因的 PP1 必须走此口径；通用版 0.25^(affected-1) 与官网 −1 一致，真实差异在阈值——通用 0.9/1.5/2.1 是 AD(LOD 底数0.5) 阈值，套在 AR(底数0.25) LOD 上低估，故 HL VCEP 用官方 0.6/1.2/1.5。",
+    "supporting": 0.6, "moderate": 1.2, "strong": 1.5,
+    "source": "ClinGen Hearing Loss Expert Panel spec v2（GN005，PMID 30311386）Table 2 / General Recommendations（= Oza et al. 2018 Table 4a/4b，两套表名同源）；Date Approved 2022-03-29",
+    "version": "HL-VCEP (2026)",
+    "genes_ref": "非穷举锚点：USH2A 等遗传性耳聋基因；以官方 HL VCEP 基因清单为准，HL 相关基因遇不确定回官方核对"
+  },
+  "pm3_score": {
+    "note": "PM3 反式累分表（ClinGen 打分表）",
+    "confirmed_in_trans": 1.0,
+    "phase_unknown_P": 0.5, "phase_unknown_LP": 0.25,
+    "homozygous": 0.5, "homozygous_cap": 1.0,
+    "VUS_in_trans": 0.25, "VUS_cap": 0.5,
+    "threshold": 4.0,
+    "threshold_note": "累分 >= 4.0 → PM3_VeryStrong，禁止保守降档",
+    "source": "ClinGen 打分表 / 指南解读 slide 44-47",
+    "version": "ClinGen 打分表 v1"
+  }
+}

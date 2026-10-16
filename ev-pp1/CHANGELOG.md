@@ -2,6 +2,22 @@
 
 2026-10-15 description 瘦身整改：version 变更日志从 SKILL.md frontmatter 下沉至此
 
+## v1.6.2（Table 4a/4b 双引并列回填，2026-10-16 v17 审计自我更正后回改）
+
+- 上一轮 v1.6.1 按 v16 审计把 HL VCEP 阈值来源改为 "Table 2 / General Recommendations"（v2 规范文档表名）。**v17 审计自我更正**：Table 4a/4b 是 Oza et al. 2018（PMID 30311386，Human Mutation 39:1593–1613）论文的正确编号，v2 规范 PDF（2022-03-29）另用 General Recommendations 表，**两者同源一致、只是引用对象不同（论文 vs 规范文档）**。
+- **回改**：ev-pp1/SKILL.md §第 4 步 + 自检、config/thresholds.json source 改为**双引并列**——"Oza et al. 2018 [PMID 30311386] Table 4a/4b ↔ HL VCEP cspec v2 [2022-03-29] General Recommendations 表"，消除包内（SCID VCEP FOXN1 用 Table 4a 论文口径）两套表名的不一致。
+- 纯文档引用修正，**判定逻辑/引擎/阈值零改动**（0.6/1.2/1.5 不变）。
+- 版本：ev-pp1 **1.6.2**。
+
+## v1.6.1（HL VCEP AR 口径修正 off-by-one，2026-10-16 外部审计 v16 + 官网原文核验）
+
+- **修正根因（推翻 v1.6.0 结论）**：v1.6.0 误读 HL VCEP 官方为"受累分离数含先证者"，把"受累个体数"直接当分离数，USH2A 家系 3 个受累个体 → LOD 1.81 → **Strong（over-call 一档，错误）**。回官网 v2 原文核验：**"do not count probands as a segregation；Affected segregations = # affected individuals − 1"** → 受累分离数 = 个体数 − 1。
+- **修正后**：USH2A 家系 3 个受累个体（unaff=0）→ 分离数 2 → LOD **1.20 → Moderate** ✅；1 名受累亲属（2 个体）→ 分离数 1 → LOD 0.60 → **Supporting** ✅（对照官网证据码表 "Segregation in one affected relative = PP1 Supporting"）；仅先证者（1 个体）→ 分离数 0 → 不成立 ✅。
+- **归因修正**：真实低估来源是**阈值错配**——通用 pp1_lod 的 0.9/1.5/2.1 是 AD(LOD 底数 0.5) 的阈值，套在 AR(底数 0.25) LOD 上偏低；通用 0.25^(affected-1) 与官网 −1 口径**数值一致**，无"排除先证者"问题。HL VCEP 基因须走官方阈值 **0.6/1.2/1.5**（Table 2 / General Recommendations）。
+- **同步改动**：`acmg_evidence.py::pp1_lod_hl_ar`（`0.25^affected` → `0.25^(affected−1)`，affected 参数=受累个体数含先证者）+ docstring/注释/返回文案；`ev-pp1/SKILL.md` 第 4 步、输出四要素、自检清单；`config/thresholds.json → hl_vcep_pp1` note/source（Table 4a/4b → Table 2/General Recommendations，PMID 28868250 → 30311386）。
+- **回归影响（预期变化，非新问题）**：USH2A 实战组合由 v1.6.0 的 `PM3_S + PP1_Strong + PM2_S` = Pathogenic/A · LP/B（分歧、over-call）恢复为官网口径 `PM3_S + PP1_Moderate + PM2_S` = LP 双套一致。
+- 版本：ev-pp1 **1.6.1**。
+
 ## v1.1.0
 
 - 新增遗传方式前置判定硬步骤——判定前必须先调用 `arad-inheritance-judgment` 确认该变异为显性(AD)/隐性(AR)/X连锁，再选用对应 LOD 公式与强度表，禁止默认 AD 或 AR；遗传方式以 ClinVar 患者基因型+PubMed报道+GenCC MOI 三方交叉为准。

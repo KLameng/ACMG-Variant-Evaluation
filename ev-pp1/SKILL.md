@@ -1,6 +1,6 @@
 ---
 name: ev-pp1
-version: 1.6.0
+version: 1.6.2
 description: PP1 支持致病证据（变异与疾病在家系中共分离）与 BS4（支持良性，变异在受影响个体中无共分离）判定，成对放在同一SKILL。按 指南解读 slide 49-51 与 变异解读查询路径 5.5.7 执行：变异须罕见(符合PM2)；按减数分裂次数=患者数-1计分离次数；显性/XL与隐性分别用LOD公式与表查强度；含AD LOD对照表与隐性LOD公式、VCEP基因特异性阈值。
 ---
 
@@ -76,21 +76,21 @@ PP1：突变与疾病在家系中共分离（在家系多个患者中检测到�
   - 注：0.25/0.75 代表父母均为携带者的典型 AR 模型；若父母一方为携带者另一方患病，则用 0.5 和 0.5。
 - 按 affected segregations（行 0–10）× unaffected segregations（列 0–10）的 LOD 矩阵查表（变异解读查询路径 p24 表）：绿色=Supporting，橙色=Moderate，红/深红=Strong。
 
-### 第 4 步：VCEP 基因特异阈值（强制官方矩阵闸，v1.6.0 升级——防经验计数漏判）
+### 第 4 步：VCEP 基因特异阈值（强制官方矩阵闸，v1.6.0 升级 / v1.6.1 修正 off-by-one——防经验计数漏判）
 
-**PP1 判定第一步先判断"该基因是否有 ClinGen VCEP cspec 且其 PP1 用 Table/LOD 矩阵"；有 → 必须返回官方规范原文逐格查表，禁止任何计数推理。** 评级误判根因（2026-10 实证，USH2A）：用经验计数（"先证者之外 N 个受累亲属→Moderate"）替代 HL VCEP 官方查表，把 3 个受累分离当成了 2 个。
+**PP1 判定第一步先判断"该基因是否有 ClinGen VCEP cspec 且其 PP1 用 Table/LOD 矩阵"；有 → 必须返回官方规范原文逐格查表，禁止任何计数推理。** 评级误判根因（2026-10 实证，USH2A）：初用经验计数（"先证者之外 N 个受累亲属→Moderate"）替代 HL VCEP 官方查表；随后 v1.6.0 又误读官方为"受累分离数含先证者"，把"受累个体数"直接当分离数，over-call 一档（3 个体→Strong 1.81）；v1.6.1 已回官网原文修正为 −1 口径（3 个体→分离数 2→Moderate 1.20）。
 
-**HL VCEP（GN005，遗传性耳聋基因）AR 分离专用口径（写死）**：
-- **受累分离数 affected 含先证者**（affected family members in whom biallelic compound heterozygous/homozygous variants segregate）；
+**HL VCEP（GN005，遗传性耳聋基因）AR 分离专用口径（写死，v1.6.1 对齐官网 v2 原文）**：
+- **受累个体数 affected 含先证者**；**受累分离数 = 个体数 − 1**（官网 v2 明文："For both AD and AR segregation counting, **do not count probands as a segregation**；Affected segregations = # affected individuals in the family − 1"）；
 - **unaffected 只算**对两变异均野生型、或仅携带单个变异的成员，**携带者父母不计**；
-- LOD = `log10(1 / (0.25^affected × 0.75^unaffected))`（Strande 2017 简化，对应 HL VCEP Table 4b 矩阵）；
-- 阈值 **0.6/1.2/1.5**（4:1/16:1/32:1，Table 4a）→ Supporting / Moderate / Strong；
-- **有 HL VCEP 基因 → 禁用通用 `pp1_lod_ar`**（其 `0.25^(affected-1)` 排除先证者、阈值 0.9/1.5/2.1，会系统性低估档位）。实证：USH2A 家系 3 受累分离（unaff=0）→ 通用 LOD 1.20→Supporting ❌；HL VCEP 官方 LOD 1.81→Strong ✅。
-- 确定性工具：`python acmg_evidence.py pp1_lod_hl_ar <受累分离数含先证者> <unaffected>`；或带基因名 `python acmg_evidence.py pp1_lod_ar <affected> <unaff> - <GENE>` 自动走官方口径（HL VCEP 基因命中 `_in_hl_vcep` 锚点）。
+- LOD = `log10(1 / (0.25^(affected−1) × 0.75^unaffected))`（affected 为受累个体数含先证者，指数取个体数−1）；
+- 阈值 **0.6/1.2/1.5**（4:1/16:1/32:1，Oza et al. 2018 [PMID 30311386] **Table 4a/4b** ↔ HL VCEP cspec v2 [2022-03-29] **General Recommendations 表**，两套表名同源一致）→ Supporting / Moderate / Strong；
+- **有 HL VCEP 基因 → 禁用通用 `pp1_lod_ar` 阈值**（通用 0.9/1.5/2.1 是 AD(LOD 底数0.5) 的阈值，套在 AR(底数0.25) LOD 上会系统性低估档位；HL VCEP 基因须走官方 0.6/1.2/1.5）。实证：USH2A 家系 3 受累个体（unaff=0）→ 分离数 2 → 官方 LOD 1.20 → Moderate ✅；通用阈值判 Supporting ❌。
+- 确定性工具：`python acmg_evidence.py pp1_lod_hl_ar <受累个体数含先证者> <unaffected>`（函数内部取分离数=个体数−1）；或带基因名 `python acmg_evidence.py pp1_lod_ar <affected> <unaff> - <GENE>` 自动走官方口径（HL VCEP 基因命中 `_in_hl_vcep` 锚点）。
 
 **通用工具只用于无 VCEP 基因**；命中 VCEP（HL 等）时，工具输出必须与官方矩阵对拍、**不一致以官方为准并留痕**。
 
-**输出强制四要素（杜绝经验表述）**：受累分离数（含先证者）+ unaffected 数 + 查表 LOD + 对照阈值；缺任一即回补，不得以"≥2 亲属=Moderate"这类计数表述代替。
+**输出强制四要素（杜绝经验表述，v1.6.1）**：受累个体数（含先证者）+ 受累分离数 = 个体数−1 + unaffected 数 + 查表 LOD + 对照阈值；缺任一即回补，不得以"≥2 亲属=Moderate"这类计数表述代替。
 
 **非 HL 的 VCEP（如适用）**：CDH1、脑畸形(AKT3/MTOR/PIK3CA/PIK3R2)、心肌病(MYH7)、家族性高胆固醇血症(FH)、FBN1 等，按对应 VCEP 表的 meiosis/family 数量定 PP1_Supporting/Moderate/Strong（同样须回官方原文核对，不凭记忆）。
 
@@ -124,7 +124,7 @@ BS4：在受影响个体中检测不到该变异（无共分离），即在疾�
 - [ ] 已排除拟表型/外显率影响。
 - [ ] 互斥裁决统一在收尾技能 `acmg-conflict-summary-output` 执行（本技能不据此弃用/降档）。
 - [ ] **已执行「可疑文献上报」核验（v4.1.0 全局，判定标准唯一以 `ev-variant-literature-patient` 为准）：凡依赖文献检索，命中可疑文献判定标准（HGMD/ClinVar 已挂载但全文通道全部无法获取、或标题/摘要检索不到该变异）时，已把 PMID+链接+原因上报用户人工核验，未把无法核验全文的文献静默当作已核实证据计入。**
-- [ ] **已执行 HL VCEP 官方矩阵闸（v1.6.0）：已判断该基因是否属 HL VCEP（GN005）；是 → 已回官方 Table 4b/Strande 2017 逐格查表（受累分离数含先证者、unaffected 不含携带者父母、LOD=log10(1/(0.25^affected×0.75^unaff))、阈值 0.6/1.2/1.5），未用经验计数；输出已含四要素（受累分离含先证者 + unaffected + 查表 LOD + 对照阈值），未以"≥N 亲属=某档"代替。**
+- [ ] **已执行 HL VCEP 官方矩阵闸（v1.6.1 修正 off-by-one）：已判断该基因是否属 HL VCEP（GN005）；是 → 已回官方原文逐格查表（受累个体数含先证者、受累分离数=个体数−1、unaffected 不含携带者父母、LOD=log10(1/(0.25^(affected−1)×0.75^unaff))、阈值 0.6/1.2/1.5 [Oza et al. 2018 Table 4a/4b ↔ HL VCEP v2 General Recommendations 表]），未用经验计数、未把个体数当分离数；输出已含四要素（受累个体数含先证者 + 分离数=个体数−1 + unaffected + 查表 LOD + 对照阈值），未以"≥N 亲属=某档"代替。**
 
 ---
 

@@ -1,0 +1,1096 @@
+{
+ "frozen_at": "2026-10-15",
+ "status": "暂用版（随金标准更新重建，非永久冻结）",
+ "ruler_A": "ACMG/AMP 2015 Table 5 组合规则 (Richards et al., Genet Med 2015)",
+ "ruler_B": "Tavtigian 点值法 (Tavtigian et al. 2020, PMID 32720330)",
+ "official_ruler": "ClinGen VCEP 官方裁定（最高真值层）",
+ "cases": [
+  {
+   "id": "var001",
+   "gene": "SURF1",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "used",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "方法B +9 处 LP 上沿（距 P 差1分）"
+  },
+  {
+   "id": "var002",
+   "gene": "F7",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "used（1例相位未确证0.5；第2例纯合先证者未核验）",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "双套分歧已回中间复核：证据确无降档/漏码（按当时检索），并列输出"
+  },
+  {
+   "id": "var003",
+   "gene": "PYGM",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Moderate",
+     "status": "used（PMID 36384998 1例确认反式）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "双套分歧已复核：A=LP 系经典表 1VS+1PM 规则限制，B=+11 达 P"
+  },
+  {
+   "id": "var004",
+   "gene": "EYS",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "used",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "无"
+  },
+  {
+   "id": "var005",
+   "gene": "OTOF",
+   "criteria": [
+    {
+     "code": "VCEP官方裁定",
+     "level": "官方",
+     "status": "Hearing Loss VCEP GN023 v2 2024-05-15：PP3+PM3_VS+PP4+PP1_S→致病；gnomAD exome AF=0.0092% 略高于 AR-HL 0.007% 阈值，PM2 不单独强立",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "VCEP官方",
+   "official": true,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=VCEP官方；会随金标准更新",
+   "note": "官方裁定优先采用"
+  },
+  {
+   "id": "var006",
+   "gene": "GJB2",
+   "criteria": [
+    {
+     "code": "VCEP官方裁定",
+     "level": "官方",
+     "status": "ClinGen Hearing Loss 专家组共识（PMC7235630；evrepo UUID 69193dd4）：AR NSHL 致病、可变外显/不完全外显；BA1 依 Ghosh 2018 例外名单豁免；通用码 PP3/BP4/PM2 均不达 VCEP 阈值",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "VCEP官方",
+   "official": true,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=VCEP官方；会随金标准更新",
+   "note": "通用分值 0 分（VUS），按 §0 官方优先总则覆盖为 P"
+  },
+  {
+   "id": "var007",
+   "gene": "ACE",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "used",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "used",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "方法B +9 处 LP 上沿"
+  },
+  {
+   "id": "var008",
+   "gene": "UGT1A1",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "未成立",
+     "status": "gnomAD exomes AF=0.90% >> 0.1% AR 罕见阈值",
+     "confidence": null
+    },
+    {
+     "code": "BP4",
+     "level": "Moderate",
+     "status": "REVEL=0.139→(0.016,0.183]→BP4_M",
+     "confidence": "contested"
+    },
+    {
+     "code": "BS1",
+     "level": "边界未计入",
+     "status": "exomes 0.90%<1%、genomes 1.13%>1% 恰处边界",
+     "confidence": null
+    },
+    {
+     "code": "BA1",
+     "level": "未成立/人工裁决",
+     "status": "总人群<5%；*6 不在 Ghosh 2018 官方豁免名单，thresholds.yaml 明确须人工裁决",
+     "confidence": null
+    },
+    {
+     "code": "BS2",
+     "level": "未成立",
+     "status": "低外显数量性状非早期完全外显病，前提不符",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "Likely Benign",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "双套 A=VUS/B=LB 不一致；已复核证据确实不足（低功能等位、频率边界、ClinVar 冲突），并列输出并转人工裁决（疾病语境/BA1 豁免）"
+  },
+  {
+   "id": "var009",
+   "gene": "TYR",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=0.008%<0.1%",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Supporting",
+     "status": "REVEL=0.728→[0.644,0.773)",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM5",
+     "level": "Moderate",
+     "status": "同位点 R299C/R299S 已报道致病（ClinVar VCV99587）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "错义为主要机制",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Moderate（待全文核验）",
+     "status": "RCV000085979 'consistent with in trans'；纯合中国家系（可疑文献，核验前按计分并标注）",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "剔除待核验 PM3→+4 VUS；PM3 全文核验为定稿前提"
+  },
+  {
+   "id": "var010",
+   "gene": "G6PD",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=0.0112%<0.05%(XL)",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Moderate",
+     "status": "REVEL=0.869→[0.773,0.932]",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "错义>90% 为主要机制",
+     "confidence": "certain"
+    },
+    {
+     "code": "PS3",
+     "level": "待核验（互斥剔除）",
+     "status": "已确立缺乏变异型（酶学），但与 PP3 互斥且未全文核验→正式累分剔除",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar 17P 方向 vs 净方向弱致病（+4）——非保守压权，PS3 核验后升 LP"
+  },
+  {
+   "id": "var011",
+   "gene": "GNE",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=0.0065%<0.1%",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3/BP4",
+     "level": "均不成立",
+     "status": "REVEL=0.493 落中空档(0.290,0.644)",
+     "confidence": null
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "GNE 致病 82% 为错义",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "待核验未计",
+     "status": "ClinVar 挂载复合杂合报道，本家系相位未确认",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar P/LP(×10) vs 净 +2 弱致病，方向同向强度不足，待反式相位"
+  },
+  {
+   "id": "var012",
+   "gene": "HPS3",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "无义外显子10/17 预期 NMD；HPS3 确立 AR-LOF",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD AF=0.00083%<0.1%",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 距 P=10 差 1 分；ClinVar 7/7 P 为外部方向"
+  },
+  {
+   "id": "var013",
+   "gene": "ATP7B",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD AF=0.0022%<0.1%",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Moderate",
+     "status": "REVEL=0.914→[0.773,0.932]",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "错义为主要机制",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "复合杂合报道但相位未确认→phase_unknown 0.5（thresholds.yaml）",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "PM3 相位核验确认 in-trans 后升 Moderate→+6 LP"
+  },
+  {
+   "id": "var014",
+   "gene": "OCA2",
+   "criteria": [
+    {
+     "code": "PP3",
+     "level": "Strong",
+     "status": "REVEL=0.955≥0.932→PP3_Strong",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD genomes AF=6.57e-6",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "错义为主要机制",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+6 恰处 LP 下沿"
+  },
+  {
+   "id": "var015",
+   "gene": "SPATA7",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "早期移码外显子2/12 预期 NMD；AR-LOF 基因",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "未成立",
+     "status": "gnomAD exomes AF=0.000238>0.1% 阈值，homalt=3",
+     "confidence": null
+    },
+    {
+     "code": "BS2",
+     "level": "Strong",
+     "status": "gnomAD 3 个健康纯合子（早发完全外显 AR 眼病）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "PVS1(+8) vs BS2(−4) 冲突消解→+4 VUS；ClinVar 分类冲突一致"
+  },
+  {
+   "id": "var016",
+   "gene": "GRHPR",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "移码外显子8/9（penultimate）PTC>50nt 上游预期 NMD；低质量 indel 位点已注意",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=1.23e-5",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 LP/P 边界；ClinVar=P 外部方向"
+  },
+  {
+   "id": "var017",
+   "gene": "F7",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=5.47e-6<0.1%",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP2",
+     "level": "Supporting",
+     "status": "错义为主要机制",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "未达阈值",
+     "status": "REVEL=0.335 落中空档(0.290,0.644)",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar P/LP 多提交者方向 vs 净 +2 VUS 方向不一致已留痕，待 FVII 功能/反式/家系证据复核（修正：原错定 LP 已改）"
+  },
+  {
+   "id": "var018",
+   "gene": "GNPTAB",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "经典供体+1；SpliceAI=0.96",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=1.78e-5",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 LP/P 边界；ClinVar=P 多提交者外部方向；PM3 可疑文献未计"
+  },
+  {
+   "id": "var019",
+   "gene": "MPL",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "经典受体-1；SpliceAI=0.95；生殖系 LOF→CAMT AR",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=1.23e-5",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 LP/P 边界；PM3 成立可升 P"
+  },
+  {
+   "id": "var020",
+   "gene": "GNE",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "移码外显子7/12 预期 NMD；同密码子无义 c.1258C>T=P",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未收录（AF=0）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 LP/P 边界"
+  },
+  {
+   "id": "var021",
+   "gene": "SLC12A3",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "Strong",
+     "status": "RNA RT-PCR 证实 90bp 假外显子插入（PMID 21051746）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未见等位",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Moderate",
+     "status": "PMID 40775302 母源 in-trans 复合杂合（confirmed，thresholds.yaml p_lp=1.0）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "修正后与 thresholds.yaml 对齐；若 PM3 按 2.5 取 Strong 且 PP4 保留可至 P（金标准 recheck 亦降 Moderate→LP）"
+  },
+  {
+   "id": "var022",
+   "gene": "SLC22A5",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD genome AF=6.6e-6/exome 1.25e-5（EAS~0.017%）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Supporting",
+     "status": "AlphaMissense 0.988/CADD 32/ClinPred 0.9999 等一致有害（REVEL 通道未单独取数，强度按多工具一致给 S）",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar P/LP vs +2 弱致病同向强度不足；若 REVEL≥0.932 则 PP3 应 Strong→+5 High-VUS，且 PP4（血浆肉碱生化）补入可至 LP"
+  },
+  {
+   "id": "var023",
+   "gene": "CFTR",
+   "criteria": [
+    {
+     "code": "PS3",
+     "level": "Supporting",
+     "status": "体外剪接研究证实 5T 降低 exon10 正常剪接（PMID 10556281/14685937/9435322）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "大量无关 CBAVD/CFTR-RD 复合杂合报道（≥2 独立反式可核实则升 Moderate）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2/BA1",
+     "level": "未成立",
+     "status": "gnomAD AF≈0.94%、37 纯合——高频但降低外显率等位，不判 BA1",
+     "confidence": null
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "VUS",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "通用分值仅 +2 VUS；LP 依赖共识方向（CFTR2/ClinVar 聚合 P20/LP5/降低外显率框架）；严格通用流程为 VUS（最多 LP）"
+  },
+  {
+   "id": "var024",
+   "gene": "NSDHL",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未见",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Supporting",
+     "status": "REVEL=0.939 等一致有害（边界值 0.932 建议复核）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PS2/PM6",
+     "level": "未成立",
+     "status": "无 de novo 验证/嵌合比例数据（家系三比数据未作 PS2 计）",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar 冲突方向；若家系三比满足 PS2 定义则 +1→+6 LP"
+  },
+  {
+   "id": "var025",
+   "gene": "HEXB",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "移码外显子11/14 PTC 远离末外显连接预期 NMD",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未见",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 距 P 差 1 分；PM3 反式证实后升 P；AutoPVS1 判 NF5=Strong（PVS1 档位边界，NMD 需人工按 SVI 决策树）"
+  },
+  {
+   "id": "var026",
+   "gene": "SPINK5",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "移码外显子26/33 PTC 预期 NMD",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未见",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 距 P 差 1 分；PM3（PMID 11841556 逐例合子）核验后升 P"
+  },
+  {
+   "id": "var027",
+   "gene": "SMPD1",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD genome 1.97e-4/exome 4.53e-4（<0.1%）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PP3",
+     "level": "未成立",
+     "status": "REVEL 0.888 有害但 AlphaMissense 0.42/BayesDel 0.067 分歧——多工具混合时不强取致病侧",
+     "confidence": null
+    },
+    {
+     "code": "PM3",
+     "level": "未成立",
+     "status": "无家系反式/酶功能数据",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+1 VUS 下沿；需鞘磷脂酶活性(PS3)或反式相位(PM3)；EAS 亚群 AF 与 BS1 边界待核"
+  },
+  {
+   "id": "var028",
+   "gene": "CCDC88C",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "Strong",
+     "status": "无义；gene-validity 官方档位未确认→SVI 封顶 Strong（Moderate 有效性）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD AF=3.42e-6",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "VUS",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "双套分歧（A=LP/B=+5 VUS 上沿）；gene-validity 官方档位与 PM3 反式病例为未决点"
+  },
+  {
+   "id": "var029",
+   "gene": "CDH23",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "移码预期 NMD；GN005 明文 CDH23 走 SVI PVS1 流程图",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "GN005 v2.0 移除 PM2 Moderate 档，S 合规",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "无实质未决点"
+  },
+  {
+   "id": "var030",
+   "gene": "HBB",
+   "criteria": [
+    {
+     "code": "VCEP官方裁定",
+     "level": "官方",
+     "status": "ClinGen Hemoglobinopathy VCEP GN170 v1.0.0：VCV15458=Pathogenic（15 confirmed trans+7 纯合，PS3_P+PM3_VS+PS4_VS）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "VCEP官方",
+   "official": true,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=VCEP官方；会随金标准更新",
+   "note": "PVS1 不适用（深内含子泄漏剪接）已按官方处理"
+  },
+  {
+   "id": "var031",
+   "gene": "HEXA",
+   "criteria": [
+    {
+     "code": "PS3",
+     "level": "Strong",
+     "status": "RNA 证实外显子跳跃（PMID 20363167）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "罕见",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "塞浦路斯家系相位（PMC4287815）+ 西印度单患者（相位未核）",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "PM3 若 confirmed trans 增加→可升 P"
+  },
+  {
+   "id": "var032",
+   "gene": "CNGA3",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "Strong",
+     "status": "末外显子 8/8 无义→NMD 不预期→Strong 封顶（热点下游多例致病截短）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "罕见",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "VUS",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "双套分歧（A=LP/B=+5）；若 PVS1 按 VS（多例致病截短支撑）且 PM3 confirmed trans 计→可 P"
+  },
+  {
+   "id": "var033",
+   "gene": "PKHD1",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "Strong",
+     "status": "经典受体-1 默认移码+NMD→VS 前提；外显子31 mod-3 未核→保守降 Strong",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "罕见",
+     "confidence": "contested"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "VUS",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "外显子31 长度 mod-3=0（框内跳跃）则 PVS1 降档→VUS 边界；需 Mutalyzer/RNA-seq 定案"
+  },
+  {
+   "id": "var034",
+   "gene": "ETFDH",
+   "criteria": [
+    {
+     "code": "PP3",
+     "level": "Moderate",
+     "status": "REVEL=0.812→[0.773,0.932]",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "罕见",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM3",
+     "level": "未计",
+     "status": "反式病例文献均 ClinVar 挂载未全文核验（铁律不计）",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar 多提交者 P vs +3 VUS 方向一致强度不足；PM3 phase-unknown 封顶核验（≈2.0→Strong）后升 LP"
+  },
+  {
+   "id": "var035",
+   "gene": "SLC25A13",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=1.30e-5",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Supporting",
+     "status": "SpliceAI=0.82>0.2（非经典 +5 剪接预测）",
+     "confidence": "certain"
+    },
+    {
+     "code": "PVS1",
+     "level": "未计",
+     "status": "无 RNA 实证（非经典位点）",
+     "confidence": null
+    },
+    {
+     "code": "PM3",
+     "level": "未计",
+     "status": "无本家系相位数据",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar RCV=P 外部方向 vs 净 +2 VUS 差异留痕；RNA 实证（PMC3931723 内含子6全长保留+PTC@212→PVS1_Strong）与 confirmed trans（PM3_M）补入后升 LP"
+  },
+  {
+   "id": "var036",
+   "gene": "GALC",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=2.41e-4",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Moderate",
+     "status": "REVEL=0.91→[0.773,0.932]",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "近亲家系纯合晚发型 Krabbe（homozygous 0.5→S）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PS3",
+     "level": "互斥剔除",
+     "status": "纯合酶活性下降（与 PP3 互斥，PP3 分值更高保留）",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar RCV LP/P 方向；PM3 12 受累例（1纯合+8复合+3杂合）逐例相位核验、PS3/PP1/PP4 补入后升 LP/P"
+  },
+  {
+   "id": "var037",
+   "gene": "SLC22A5",
+   "criteria": [
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD exomes AF=2.33e-5",
+     "confidence": "certain"
+    },
+    {
+     "code": "PP3",
+     "level": "Moderate",
+     "status": "REVEL=0.901→[0.773,0.932]",
+     "confidence": "certain"
+    },
+    {
+     "code": "PM3",
+     "level": "Supporting",
+     "status": "与已知 P/LP 反式报道（PMC11382357 相位待核）",
+     "confidence": "contested"
+    },
+    {
+     "code": "PS3",
+     "level": "互斥剔除",
+     "status": "F17L 肉碱转运受损（Urban 2006，与 PP3 互斥）",
+     "confidence": null
+    }
+   ],
+   "methodA": "VUS",
+   "methodB": "VUS",
+   "basis": "Table5",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "ClinVar Pathogenic 多提交方向；PM3 逐例核验、PS3（PMID 16931768 HEK293T 7.44%）、PP1/PP4 补入后升 LP"
+  },
+  {
+   "id": "var038",
+   "gene": "GJB2",
+   "criteria": [
+    {
+     "code": "VCEP官方裁定",
+     "level": "官方",
+     "status": "ClinGen Hearing Loss VCEP GN005：RCV000018538=Pathogenic；evrepo UUID eda5030c（2018）",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Pathogenic",
+   "methodB": "Pathogenic",
+   "basis": "VCEP官方",
+   "official": true,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=VCEP官方；会随金标准更新",
+   "note": "通用分值 +8 落 LP，官方裁定升级 P（§0 优先总则）"
+  },
+  {
+   "id": "var039",
+   "gene": "ERCC4",
+   "criteria": [
+    {
+     "code": "PVS1",
+     "level": "VeryStrong",
+     "status": "无义外显子4/11 预期 NMD；双等位 LOF=FANCQ/XP-F 确立机制",
+     "confidence": "contested"
+    },
+    {
+     "code": "PM2",
+     "level": "Supporting",
+     "status": "gnomAD 未见",
+     "confidence": "certain"
+    }
+   ],
+   "methodA": "Likely Pathogenic",
+   "methodB": "Likely Pathogenic",
+   "basis": "点值法",
+   "official": false,
+   "source": "金标准暂用版（来源 39变异技能群评级汇总.json）；methodA=经典联合规则、methodB=Tavtigian 分值；basis=Table5；会随金标准更新",
+   "note": "+9 距 P 差 1 分；PVS1 满档第三要素（≥3 独立 LOF）未实证、gene-validity 官方档位未确认→若降 Strong 落 VUS 边界（C 级未决）"
+  }
+ ],
+ "confidence_ruler": "2026-10-15 金标准治理 v2：每个已定级证据码标 certain(确信) / contested(有争议)。certain=数值明确无保留；contested=边界擦边/来源冲突/phase未核/可疑文献/降档封顶/依据无具体数值。v2.1 修订（用户拍板）：REVEL 数值只要查到、严格按官方区间裁决（0.290中空档/0.644~0.773 S/0.773~0.932 M/≥0.932 S 等），该数值裁决即确信，即使落在区间边界也不标争议；仅当该码在冲突/限定场景下「本身是否成立」存疑时（如 var008 BP4 与功能实验冲突）仍标有争议。未成立/未计/互斥剔除/边界未计入的码不参与标注(confidence=null)。"
+}
