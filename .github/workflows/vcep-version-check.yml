@@ -1,0 +1,44 @@
+name: VCEP Data Check & Regression Gate
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout private VCEP data repo
+        uses: actions/checkout@v4
+        with:
+          repository: KLameng/ACMG-VCEP-Data
+          token: ${{ secrets.VCEP_PAT }}
+          path: vcep-data
+
+      - name: Verify VCEP data baseline readable
+        run: |
+          echo "=== VCEP manifest ==="
+          head -3 vcep-data/vcep-version-manifest.csv
+          echo ""
+          echo "gene count: $(tail -n +2 vcep-data/vcep-version-manifest.csv | wc -l)"
+          echo "narrative units: $(ls vcep-data/narrative-units/ | wc -l)"
+          echo "kb files: $(ls vcep-data/knowledge-base/*.md | wc -l)"
+          test -f vcep-data/vcep-version-manifest.csv
+          test -d vcep-data/narrative-units
+          echo "VCEP data baseline OK"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Regression gate
+        run: python scripts/regression_gate.py
+
+      - name: Contract test
+        run: python scripts/contract_test.py
